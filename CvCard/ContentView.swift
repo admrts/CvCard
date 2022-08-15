@@ -25,17 +25,15 @@ struct ContentView: View {
                     .font(.title)
                     .bold()
                 .foregroundColor(.init(red: 0.89, green: 0.86, blue: 0.78))
-                Text("iOS Developer")
+                Text("On the way becoming a developer")
                     .font(.system(size: 17))
                     .bold()
                     .foregroundColor(.init(red: 0.95, green: 0.95, blue: 0.95))
                 Divider()
-                RoundedRectangle(cornerRadius: 25)
-                    .frame(height: 50)
-                    .foregroundColor(.init(red: 0.89, green: 0.86, blue: 0.78))
-                    .overlay(Text("+90 530 125 57 07")
-                        .bold())
-                    
+                InfoView(text: "+90 530 125 57 07", imageName: "phone.fill")
+                InfoView(text: "alidemirtas.7@icloud.com", imageName: "envelope.fill")
+                
+            
             }
         }
            
@@ -45,5 +43,23 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+    }
+}
+
+struct InfoView: View {
+    
+    let text: String
+    let imageName: String
+    
+    var body: some View {
+        RoundedRectangle(cornerRadius: 25)
+            .frame(height: 50)
+            .foregroundColor(.init(red: 0.89, green: 0.86, blue: 0.78))
+            .overlay(HStack {
+                Image(systemName: imageName)
+                Text(text)
+                    .bold()
+            })
+            .padding(.all)
     }
 }
