@@ -58,8 +58,10 @@ struct InfoView: View {
             .foregroundColor(.init(red: 0.89, green: 0.86, blue: 0.78))
             .overlay(HStack {
                 Image(systemName: imageName)
+                    .foregroundColor(Color("black"))
                 Text(text)
                     .bold()
+                    .foregroundColor(Color("black"))
             })
             .padding(.all)
     }
